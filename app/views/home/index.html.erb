@@ -1,10 +1,22 @@
-<h1>Hello ! Here we will see index page :)</h1>
-
 <%  content_for :head do %>
 <div id="header" class="header">
   
 </div>
 <% end %>
+
+<div class="left_side">
+  <h3>list of categories</h3>
+  <ul>
+    <%  @categories.each do |category| %>
+    <li class="menu_itom"><%= link_to category.title, category %> </li>
+    <%end%>
+    </ul>
+  <%=link_to 'create new category', new_category_path %> 
+</div>
+
+<div class="main_content">
+  categories contacts
+</div>
 
 <% content_for :header do %>
 <div id="footer" class="footer">
